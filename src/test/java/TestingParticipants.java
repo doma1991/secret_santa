@@ -19,7 +19,7 @@ public class TestingParticipants {
     }
 
     @Test
-    public void participantIsAssignedARecipient() {
+    public void participantIsAssignedASetRecipient() {
         Participant participant = new Participant("Dominika", "do_ma1991@hotmail.com");
         Pairings pairing = new Pairings();
         pairing.assignRecipient(participant);
@@ -34,5 +34,14 @@ public class TestingParticipants {
         assertEquals("Gareth", participant.getSender());
     }
 
+    @Test
+    public void participantIsAssignedARandomRecipient() {
+        Participant participant = new Participant("Dominika", "do_ma1991@hotmail.com");
+        Participant participantTwo = new Participant("Gareth", "gaz_field@hotmail.com");
+        Participant participantThree = new Participant("Karolina", "lina93@hotmail.com");
+        Participant participantFour = new Participant("Marcin", "mm@hotmail.com");
+        Pairings pairing = new Pairings();
+        pairing.assignSender(participant);
+    }
 
 }
