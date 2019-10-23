@@ -1,17 +1,28 @@
 package secret.app;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 public class Pairings {
 
     public static void main(String[] args) {
     }
 
     public void assignRecipient(Participant participant) {
-        //save all participants onto two lists
-        //loop through list 1 to allocate receipeints to each participant
-        //loop through list 2 to find receipients
-        //once a receipent is picked, remove it from list 2 - unless it matches the participant - then try again
-        participant.setRecipient("Gareth");
-    }
+        String[] names = {"Gareth", "Dominika", "Bozena", "Marcin", "Artur", "Racheal", "Karolina", "Kamil", "Sarah"};
+            int index = (int) (Math.random() * (8 - 0) + 1) - 1;
+            String recipientName = names[index];
+            participant.setRecipient(names[index]);
+
+            while (participant.getName() == recipientName) {
+
+                    int indexTwo = (int) (Math.random() * (8 - 0) + 1) - 1;
+                    recipientName = names[indexTwo];
+            }
+            participant.setRecipient(recipientName);
+        }
+
 
     public void assignSender(Participant participant) {
         participant.setSender("Gareth");
